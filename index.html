@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sayonara | In One Frame</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        hand: ['Caveat', 'cursive'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Caveat:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        .blurred-bg {
+            filter: blur(8px);
+            transform: scale(1.1);
+        }
+
+        .main-card {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 1.2s ease-out forwards;
+        }
+    </style>
+</head>
+
+<body class="bg-black overflow-hidden h-screen w-screen flex items-center justify-center">
+
+    <!-- Blurred Background Grid -->
+    <div class="fixed inset-0 z-0 overflow-hidden blurred-bg opacity-50">
+        <div class="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-1 h-full w-full">
+            <!-- Repeatable Image Grid -->
+            <img src="D:\Alliqa\Sayonara\WhatsApp Image 2026-01-08 at 21.18.48.jpeg"
+                class="w-full h-full object-cover grayscale" alt="">
+            <img src="D:\Alliqa\Sayonara\WhatsApp Image 2026-01-08 at 21.18.43.jpeg"
+                class="w-full h-full object-cover grayscale" alt="">
+            <img src="D:\Alliqa\Sayonara\WhatsApp Image 2026-01-08 at 21.18.44 (1).jpeg"
+                class="w-full h-full object-cover grayscale" alt="">
+            <img src="D:\Alliqa\Sayonara\WhatsApp Image 2026-01-08 at 21.18.44.jpeg"
+                class="w-full h-full object-cover grayscale" alt="">
+            <img src="D:\Alliqa\Sayonara\WhatsApp Image 2026-01-08 at 21.18.45.jpeg"
+                class="w-full h-full object-cover grayscale" alt="">
+            <img src="D:\Alliqa\Sayonara\WhatsApp Image 2026-01-08 at 21.19.57.jpeg"
+                class="w-full h-full object-cover grayscale" alt="">
+            <img src="D:\Alliqa\Sayonara\WhatsApp Image 2026-01-08 at 21.19.56.jpeg"
+                class="w-full h-full object-cover grayscale" alt="">
+            <img src="D:\Alliqa\Sayonara\WhatsApp Image 2026-01-08 at 21.18.42 (1).jpeg"
+                class="w-full h-full object-cover grayscale" alt="">
+            <img src="D:\Alliqa\Sayonara\WhatsApp Image 2026-01-08 at 21.18.36.jpeg"
+                class="w-full h-full object-cover grayscale" alt="">
+            <img src="D:\Alliqa\Sayonara\WhatsApp Image 2026-01-08 at 21.18.41.jpeg"
+                class="w-full h-full object-cover grayscale" alt="">
+            <img src="D:\Alliqa\Sayonara\WhatsApp Image 2026-01-08 at 21.18.51.jpeg"
+                class="w-full h-full object-cover grayscale" alt="">
+            <img src="D:\Alliqa\Sayonara\WhatsApp Image 2026-01-08 at 21.18.50.jpeg"
+                class="w-full h-full object-cover grayscale" alt="">
+            <img src="D:\Alliqa\Sayonara\WhatsApp Image 2026-01-08 at 21.18.50 (1).jpeg"
+                class="w-full h-full object-cover grayscale" alt="">
+            <img src="D:\Alliqa\Sayonara\WhatsApp Image 2026-01-08 at 21.18.47.jpeg"
+                class="w-full h-full object-cover grayscale" alt="">
+            <img src="D:\Alliqa\Sayonara\WhatsApp Image 2026-01-08 at 21.18.37.jpeg"
+                class="w-full h-full object-cover grayscale" alt="">
+            <img src="D:\Alliqa\Sayonara\WhatsApp Image 2026-01-08 at 21.18.44 (2).jpeg"
+                class="w-full h-full object-cover grayscale" alt="">
+        </div>
+    </div>
+
+    <!-- Centered Main Content -->
+    <div class="relative z-10 w-full max-w-md md:max-w-2xl px-6 animate-fade-in text-center">
+        <div class="main-card bg-white p-4 rounded-xl shadow-2xl space-y-4">
+            <!-- Main Memory Image (Input your image here) -->
+            <div class="w-full aspect-[9/16] overflow-hidden rounded-lg bg-gray-100">
+                <img id="main-image" src="D:\Alliqa\Sayonara\Monochrome Photo Collage Winter Season Your Story.png"
+                    class="w-full h-full object-cover" alt="Main Memory">
+            </div>
+            <div class="py-4 space-y-2">
+                <h1 class="font-serif text-3xl md:text-4xl text-gray-800">Sayonara</h1>
+                <p class="font-hand text-2xl text-gray-500 italic">"Ketidaksengajaan yang berakhir meninggalkan kisah"
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Minimalist Audio Controls -->
+    <div class="fixed bottom-10 left-10 z-20">
+        <button id="audio-toggle"
+            class="p-4 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-white/20 transition-all border border-white/20 group">
+            <svg id="music-playing" class="w-6 h-6 animate-pulse hidden" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                    d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.13a4.5 4.5 0 102 3.87V7.951l8-1.6V12.13a4.5 4.5 0 102 3.87V3z">
+                </path>
+            </svg>
+            <svg id="music-muted" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                    d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.983 5.983 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.983 3.983 0 0013 10a3.983 3.983 0 00-1.172-2.828a1 1 0 010-1.415z"
+                    clip-rule="evenodd"></path>
+            </svg>
+        </button>
+        <span
+            class="ml-4 font-hand text-white/50 text-xl pointer-events-none hidden group-hover:inline opacity-0 transform translate-x-4 transition-all duration-300">Play
+            Vibes</span>
+    </div>
+
+    <!-- Invisible Audio Element -->
+    <audio id="bg-audio" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

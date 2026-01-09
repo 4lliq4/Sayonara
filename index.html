@@ -21,12 +21,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Caveat:wght@400;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <style>
-        .blurred-bg {
-            filter: blur(8px);
-            transform: scale(1.1);
-        }
-
         .main-card {
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
@@ -52,8 +48,8 @@
 <body class="bg-black overflow-hidden h-screen w-screen flex items-center justify-center">
 
     <!-- Blurred Background Grid -->
-    <div class="fixed inset-0 z-0 overflow-hidden blurred-bg opacity-50">
-        <div class="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-1 h-full w-full">
+    <div class="fixed inset-0 z-0 overflow-hidden blurred-bg opacity-40">
+        <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-0.5 h-full w-full">
             <!-- Repeatable Image Grid -->
             <img src="D:\Alliqa\Sayonara\WhatsApp Image 2026-01-08 at 21.18.48.jpeg"
                 class="w-full h-full object-cover grayscale" alt="">
@@ -91,8 +87,9 @@
     </div>
 
     <!-- Centered Main Content -->
-    <div class="relative z-10 w-full max-w-md md:max-w-2xl px-6 animate-fade-in text-center">
-        <div class="main-card bg-white p-4 rounded-xl shadow-2xl space-y-4">
+    <div class="relative z-10 w-full max-w-[90%] sm:max-w-md md:max-w-xl px-4 animate-fade-in text-center">
+        <div
+            class="main-card floating bg-white/90 p-3 sm:p-5 rounded-3xl shadow-2xl space-y-4 backdrop-blur-sm border border-white/20">
             <!-- Main Memory Image (Input your image here) -->
             <div class="w-full aspect-[9/16] overflow-hidden rounded-lg bg-gray-100">
                 <img id="main-image" src="D:\Alliqa\Sayonara\Monochrome Photo Collage Winter Season Your Story.png"
@@ -127,7 +124,7 @@
     </div>
 
     <!-- Invisible Audio Element -->
-    <audio id="bg-audio" loop>
+    <audio id="bg-audio" loop autoplay>
         <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
     </audio>
 

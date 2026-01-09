@@ -6,27 +6,57 @@ body {
 
 /* Background Blur Effect */
 .blurred-bg {
-    filter: blur(12px) brightness(0.6);
-    transform: scale(1.1);
-    transition: filter 0.5s ease;
+    filter: blur(3px) brightness(0.4);
+    transform: scale(1.05);
+    transition: filter 0.5s ease, transform 0.5s ease;
+}
+
+/* Floating Animation */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.floating {
+    animation: float 4s ease-in-out infinite;
 }
 
 /* Main Card Styling */
 .main-card {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .main-card:hover {
     transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 40px 80px -12px rgba(0, 0, 0, 0.8);
 }
 
 /* Audio Button Interaction */
+#audio-toggle {
+    transition: all 0.3s ease;
+}
+
 #audio-toggle:active {
     transform: scale(0.9);
+}
+
+@media (max-width: 640px) {
+    #audio-toggle {
+        bottom: 20px;
+        left: 20px;
+    }
 }
 
 /* Text Animations */

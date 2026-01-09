@@ -10,17 +10,35 @@ document.addEventListener('DOMContentLoaded', () => {
     let isPlaying = false;
 
     // 1. Audio Toggle Logic
+    const startAudio = () => {
+        audio.play().then(() => {
+            isPlaying = true;
+            playingIcon.classList.remove('hidden');
+            mutedIcon.classList.add('hidden');
+            // Remove the interaction listener once audio starts successfully
+            document.removeEventListener('click', startAudio);
+            document.removeEventListener('touchstart', startAudio);
+        }).catch(err => {
+            console.log("Autoplay prevented. Waiting for user interaction.");
+        });
+    };
+
     if (toggleBtn && audio) {
-        toggleBtn.addEventListener('click', () => {
+        // Try autoplay immediately
+        startAudio();
+
+        // Fallback: Start on first interaction if autoplay failed
+        document.addEventListener('click', startAudio);
+        document.addEventListener('touchstart', startAudio);
+
+        toggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent startAudio from firing if it's already a toggle click
             if (isPlaying) {
                 audio.pause();
                 playingIcon.classList.add('hidden');
                 mutedIcon.classList.remove('hidden');
             } else {
-                audio.play().catch(err => {
-                    console.log("Audio play blocked by browser. User interaction required.");
-                    alert("Klik di mana saja untuk memulai musik!");
-                });
+                audio.play();
                 playingIcon.classList.remove('hidden');
                 mutedIcon.classList.add('hidden');
             }
